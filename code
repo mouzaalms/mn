@@ -1,0 +1,188 @@
+class Login:
+    def __init__(self, username, password, login_date, login_time, otp):
+        # Initializes login attributes
+        self.__username = username  # Username of the user
+        self.__password = password  # Encrypted user password
+        self.__login_date = login_date  # Date of login attempt
+        self.__login_time = login_time  # Time of login attempt
+        self.__otp = otp  # One-Time Password for authentication
+    
+    # Getter methods
+    def get_username(self):
+        return self.__username  # Returns username
+    
+    def get_password(self):
+        return self.__password  # Returns password
+    
+    def get_login_date(self):
+        return self.__login_date  # Returns login date
+    
+    def get_login_time(self):
+        return self.__login_time  # Returns login time
+    
+    def get_otp(self):
+        return self.__otp  # Returns one-time password
+    
+    # Setter methods
+    def set_username(self, username):
+        self.__username = username  # Updates username
+    
+    def set_password(self, password):
+        self.__password = password  # Updates password
+    
+    def set_login_date(self, login_date):
+        self.__login_date = login_date  # Updates login date
+    
+    def set_login_time(self, login_time):
+        self.__login_time = login_time  # Updates login time
+    
+    def set_otp(self, otp):
+        self.__otp = otp  # Updates OTP
+    
+    def verify_login(self):
+        pass  # Validates user login credentials
+    
+    def display_login_info(self):
+        pass  # Displays login attempt details
+
+class Customer:
+    def __init__(self, customer_id, name, email, address, phone_number):
+        # Initializes customer attributes
+        self.__customer_id = customer_id  # Unique identifier for the customer
+        self.__name = name  # Customer's full name
+        self.__email = email  # Customer's email address
+        self.__address = address  # Customer's delivery address
+        self.__phone_number = phone_number  # Customer's contact number
+    
+    # Getter methods to access private attributes
+    def get_customer_id(self):
+        return self.__customer_id  # Returns customer ID
+    
+    def get_name(self):
+        return self.__name  # Returns customer's name
+    
+    def get_email(self):
+        return self.__email  # Returns customer's email
+    
+    def get_address(self):
+        return self.__address  # Returns customer's address
+    
+    def get_phone_number(self):
+        return self.__phone_number  # Returns customer's phone number
+    
+    # Setter methods to update private attributes
+    def set_name(self, name):
+        self.__name = name  # Updates customer's name
+    
+    def set_email(self, email):
+        self.__email = email  # Updates customer's email
+    
+    def set_address(self, address):
+        self.__address = address  # Updates customer's address
+    
+    def set_phone_number(self, phone_number):
+        self.__phone_number = phone_number  # Updates customer's phone number
+    
+    def place_order(self):
+        pass  # Allows customer to place a new delivery order
+    
+    def track_delivery(self):
+        pass  # Enables customer to track an existing order
+    
+    def cancel_order(self):
+        pass  # Allows customer to cancel an order before shipment
+
+
+class Admin:
+    def __init__(self, admin_id, name, email, role, phone_number):
+        # Initializes admin attributes
+        self.__admin_id = admin_id  # Unique identifier for the admin
+        self.__name = name  # Admin's full name
+        self.__email = email  # Admin's email address
+        self.__role = role  # Admin's role in the system (e.g., manager)
+        self.__phone_number = phone_number  # Admin's contact number
+    
+    # Getter methods
+    def get_admin_id(self):
+        return self.__admin_id  # Returns admin ID
+    
+    def get_name(self):
+        return self.__name  # Returns admin's name
+    
+    def get_email(self):
+        return self.__email  # Returns admin's email
+    
+    def get_role(self):
+        return self.__role  # Returns admin's role
+    
+    def get_phone_number(self):
+        return self.__phone_number  # Returns admin's phone number
+    
+    # Setter methods
+    def set_name(self, name):
+        self.__name = name  # Updates admin's name
+    
+    def set_email(self, email):
+        self.__email = email  # Updates admin's email
+    
+    def set_role(self, role):
+        self.__role = role  # Updates admin's role
+    
+    def set_phone_number(self, phone_number):
+        self.__phone_number = phone_number  # Updates admin's phone number
+    
+    def generate_delivery_note(self):
+        pass  # Generates a delivery note summarizing the order
+    
+    def assign_delivery(self):
+        pass  # Assigns delivery orders to available staff
+    
+    def update_order_status(self):
+        pass  # Updates the status of an existing order
+
+
+class Order:
+    def __init__(self, order_id, customer, items, total_cost, status, payment_method, payment_status):
+        # Initializes order attributes
+        self.__order_id = order_id  # Unique identifier for the order
+        self.__customer = customer  # Reference to the associated customer
+        self.__items = items  # List of items in the order
+        self.__total_cost = total_cost  # Total cost of the order
+        self.__status = status  # Current status of the order (e.g., Pending, Delivered)
+        self.__payment_method = payment_method  # Payment type (Credit Card, Cash)
+        self.__payment_status = payment_status  # Payment state (Paid, Unpaid)
+    
+    # Getter methods
+    def get_order_id(self):
+        return self.__order_id  # Returns order ID
+    
+    def get_customer(self):
+        return self.__customer  # Returns customer associated with order
+    
+    def get_items(self):
+        return self.__items  # Returns list of ordered items
+    
+    def get_total_cost(self):
+        return self.__total_cost  # Returns total cost of the order
+    
+    def get_status(self):
+        return self.__status  # Returns current order status
+    
+    # Setter methods
+    def set_items(self, items):
+        self.__items = items  # Updates the list of items in the order
+    
+    def set_total_cost(self, total_cost):
+        self.__total_cost = total_cost  # Updates total order cost
+    
+    def set_status(self, status):
+        self.__status = status  # Updates order status
+    
+    def calculate_total_charges(self):
+        pass  # Computes total cost including taxes and fees
+    
+    def process_payment(self):
+        pass  # Processes order payment
+    
+    def update_order_details(self):
+        pass  # Updates details of an existing order
