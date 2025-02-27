@@ -193,24 +193,91 @@ class Admin:
         # Updates the status of an order
         print(f"Admin {self.__name} updated an order status.")
 
+class Order:
+    # Represents an order in the delivery system
+
+    def __init__(self, order_id, customer, items, total_cost, status, payment_method, payment_status):
+        """Constructor initializes order details."""
+        self.__order_id = order_id  # Unique order ID
+        self.__customer = customer  # Customer who placed the order
+        self.__items = items  # List of ordered items
+        self.__total_cost = total_cost  # Total cost of the order
+        self.__status = status  # Order status (Pending, Shipped, Delivered)
+        self.__payment_method = payment_method  # Payment method used
+        self.__payment_status = payment_status  # Payment status (Pending, Completed)
+
+    # Getters and Setters
+    def get_order_id(self):
+        # Retrieves the order ID
+        return self.__order_id
+
+    def get_customer(self):
+        # Retrieves the customer associated with the order
+        return self.__customer
+
+    def get_items(self):
+        # Retrieves the list of ordered items
+        return self.__items
+
+    def get_total_cost(self):
+        # Retrieves the total cost of the order
+        return self.__total_cost
+
+    def get_status(self):
+        # Retrieves the current status of the order
+        return self.__status
+
+    def get_payment_method(self):
+        # Retrieves the payment method used
+        return self.__payment_method
+
+    def get_payment_status(self):
+        # Retrieves the payment status of the order
+        return self.__payment_status
+
+    # Additional Methods
+    def calculate_total_charges(self):
+        # Calculates and displays the total cost including tax
+        print(f"Total cost for Order {self.__order_id} is {self.__total_cost} AED.")
+
+    def update_order_details(self):
+        # Updates the details of the order (e.g., status, items)
+        print(f"Order {self.__order_id} details have been updated.")
+
+    def cancel_order(self):
+        # Cancels the order if it has not been processed
+        print(f"Order {self.__order_id} has been canceled.")
+
+    def process_payment(self):
+        # Processes the payment and marks it as completed
+        self.__payment_status = "Completed"
+        print(f"Payment for Order {self.__order_id} has been processed.")
+
+    def apply_discount(self):
+        # Applies a discount to the order
+        print(f"Discount applied to Order {self.__order_id}.")
+
+    def verify_funds(self):
+        # Verifies if there are sufficient funds for payment
+        print(f"Verifying payment for Order {self.__order_id}.")
 
 # -----------------------------
 # Creating Objects and Testing Methods
 
 # Creating a Customer Object
 customer1 = Customer(101, "Sarah Johnson", "sarah@example.com", "45 Knowledge Ave, Dubai", "+971-50-1234567")
-print(customer1.get_name())  # Output: Sarah Johnson (Retrieves and prints the customer's name)
+print(customer1.get_name())  # Output: Sarah Johnson
+
+# Creating a Login Object
+login1 = Login("sarahj", "mypassword", date(2025, 2, 26), time(10, 30, 0), "123456")
+print(login1.display_login_info())  # Output: Login info
 
 # Creating an Order Object
 order1 = Order("DEL123", customer1, ["Keyboard", "Mouse"], 283.50, "Pending", "Credit Card", "Pending")
 customer1.place_order()  # Simulates placing an order
-
-# Processing Payment for the Order
 order1.process_payment()  # Simulates processing the payment
-
-# Updating the Order Status
-order1.update_order_details()  # Simulates updating order details
+order1.update_order_details()  # Updates order details
 
 # Creating an Admin Object
 admin1 = Admin("ADM001", "Mouza", "admin@example.com", "Manager", "+971-50-9876543")
-admin1.generate_delivery_note()  # Simulates generating a delivery note
+admin1.generate_delivery_note()  # Generates a delivery note
