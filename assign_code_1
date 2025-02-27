@@ -197,7 +197,7 @@ class Order:
     # Represents an order in the delivery system
 
     def __init__(self, order_id, customer, items, total_cost, status, payment_method, payment_status):
-        """Constructor initializes order details."""
+        # Constructor initializes order details
         self.__order_id = order_id  # Unique order ID
         self.__customer = customer  # Customer who placed the order
         self.__items = items  # List of ordered items
