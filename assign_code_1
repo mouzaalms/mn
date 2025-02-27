@@ -4,7 +4,7 @@ class Login:
     # Handles user login details including authentication and login validation
 
     def __init__(self, username, password, login_date, login_time, otp):
-        """Constructor initializes login details for a user."""
+        # Constructor initializes login details for a user."""
         self.__username = username  # Private attribute storing the username
         self.__password = password  # Private attribute storing the user's password
         self.__login_date = login_date  # Stores the date when the user logged in
