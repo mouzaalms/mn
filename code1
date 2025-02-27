@@ -1,0 +1,216 @@
+from datetime import date, time  # Importing date and time modules for handling timestamps
+
+class Login:
+    """Handles user login details including authentication and login validation."""
+
+    def __init__(self, username, password, login_date, login_time, otp):
+        """Constructor initializes login details for a user."""
+        self.__username = username  # Private attribute storing the username
+        self.__password = password  # Private attribute storing the user's password
+        self.__login_date = login_date  # Stores the date when the user logged in
+        self.__login_time = login_time  # Stores the exact time of login
+        self.__otp = otp  # One-time password used for authentication
+
+    # Getter and Setter Methods for each attribute
+    def set_username(self, username):
+        """Sets the username."""
+        self.__username = username
+
+    def get_username(self):
+        """Retrieves the username."""
+        return self.__username
+
+    def set_password(self, password):
+        """Sets the password."""
+        self.__password = password
+
+    def get_password(self):
+        """Retrieves the password (not secure in real-world applications)."""
+        return self.__password
+
+    def set_login_date(self, login_date):
+        """Sets the login date."""
+        self.__login_date = login_date
+
+    def get_login_date(self):
+        """Retrieves the login date."""
+        return self.__login_date
+
+    def set_login_time(self, login_time):
+        """Sets the login time."""
+        self.__login_time = login_time
+
+    def get_login_time(self):
+        """Retrieves the login time."""
+        return self.__login_time
+
+    def set_otp(self, otp):
+        """Sets the one-time password."""
+        self.__otp = otp
+
+    def get_otp(self):
+        """Retrieves the OTP."""
+        return self.__otp
+
+    # Additional Methods
+    def verify_login(self):
+        """Verifies if the provided password matches the correct password."""
+        return self.__password == "correctPassword"  # Simulated validation
+
+    def display_login_info(self):
+        """Displays login details in a readable format."""
+        return f"User: {self.__username}, Logged in at {self.__login_time} on {self.__login_date}"
+
+
+class Customer:
+    """Represents a customer who places delivery orders."""
+
+    def __init__(self, customer_id, name, email, address, phone_number):
+        """Constructor initializes customer details."""
+        self.__customer_id = customer_id  # Unique customer ID
+        self.__name = name  # Customer's full name
+        self.__email = email  # Email address for communication
+        self.__address = address  # Delivery address
+        self.__phone_number = phone_number  # Contact number
+
+    # Getters and Setters
+    def set_customer_id(self, customer_id):
+        """Assigns a unique customer ID."""
+        self.__customer_id = customer_id
+
+    def get_customer_id(self):
+        """Retrieves the customer's unique ID."""
+        return self.__customer_id
+
+    def set_name(self, name):
+        """Updates the customer's name."""
+        self.__name = name
+
+    def get_name(self):
+        """Retrieves the customer's name."""
+        return self.__name
+
+    def set_email(self, email):
+        """Updates the customer's email."""
+        self.__email = email
+
+    def get_email(self):
+        """Retrieves the customer's email."""
+        return self.__email
+
+    def set_address(self, address):
+        """Updates the delivery address."""
+        self.__address = address
+
+    def get_address(self):
+        """Retrieves the delivery address."""
+        return self.__address
+
+    def set_phone_number(self, phone_number):
+        """Updates the customer's contact number."""
+        self.__phone_number = phone_number
+
+    def get_phone_number(self):
+        """Retrieves the customer's phone number."""
+        return self.__phone_number
+
+    # Additional Methods
+    def place_order(self):
+        """Simulates placing a new delivery order."""
+        print(f"Customer {self.__name} placed a new delivery order.")
+
+    def track_delivery(self):
+        """Simulates tracking the delivery status."""
+        print(f"Tracking delivery for {self.__name}.")
+
+    def cancel_order(self):
+        """Simulates canceling a pending order."""
+        print(f"Order for {self.__name} has been canceled.")
+
+
+class Admin:
+    """Represents an administrator who manages deliveries."""
+
+    def __init__(self, admin_id, name, email, role, phone_number):
+        """Constructor initializes admin attributes."""
+        self.__admin_id = admin_id  # Unique admin ID
+        self.__name = name  # Admin's full name
+        self.__email = email  # Email for official communication
+        self.__role = role  # Role of the admin
+        self.__phone_number = phone_number  # Contact number
+
+    # Getters and Setters
+    def set_admin_id(self, admin_id):
+        """Sets the admin ID."""
+        self.__admin_id = admin_id
+
+    def get_admin_id(self):
+        """Retrieves the admin ID."""
+        return self.__admin_id
+
+    def set_name(self, name):
+        """Updates the admin's name."""
+        self.__name = name
+
+    def get_name(self):
+        """Retrieves the admin's name."""
+        return self.__name
+
+    def set_email(self, email):
+        """Updates the admin's email."""
+        self.__email = email
+
+    def get_email(self):
+        """Retrieves the admin's email."""
+        return self.__email
+
+    def set_role(self, role):
+        """Updates the admin's role."""
+        self.__role = role
+
+    def get_role(self):
+        """Retrieves the admin's role."""
+        return self.__role
+
+    def set_phone_number(self, phone_number):
+        """Updates the admin's phone number."""
+        self.__phone_number = phone_number
+
+    def get_phone_number(self):
+        """Retrieves the admin's phone number."""
+        return self.__phone_number
+
+    # Additional Methods
+    def generate_delivery_note(self):
+        """Generates a delivery note for an order."""
+        print(f"Admin {self.__name} generated a delivery note.")
+
+    def assign_delivery(self):
+        """Assigns a delivery to a staff member."""
+        print(f"Admin {self.__name} assigned a delivery.")
+
+    def update_order_status(self):
+        """Updates the status of an order."""
+        print(f"Admin {self.__name} updated an order status.")
+
+
+# -----------------------------
+# Creating Objects and Testing Methods
+
+# Creating a Customer Object
+customer1 = Customer(101, "Sarah Johnson", "sarah@example.com", "45 Knowledge Ave, Dubai", "+971-50-1234567")
+print(customer1.get_name())  # Output: Sarah Johnson (Retrieves and prints the customer's name)
+
+# Creating an Order Object
+order1 = Order("DEL123", customer1, ["Keyboard", "Mouse"], 283.50, "Pending", "Credit Card", "Pending")
+customer1.place_order()  # Simulates placing an order
+
+# Processing Payment for the Order
+order1.process_payment()  # Simulates processing the payment
+
+# Updating the Order Status
+order1.update_order_details()  # Simulates updating order details
+
+# Creating an Admin Object
+admin1 = Admin("ADM001", "Mouza", "admin@example.com", "Manager", "+971-50-9876543")
+admin1.generate_delivery_note()  # Simulates generating a delivery note
